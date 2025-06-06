@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-
+import '../components/VacanteCard'
+import VacanteCard from '../components/VacanteCard';
 export default function Home() {
   //use state to manage the vacantes
   const [vacantes, setVacantes] = useState([]);
@@ -11,7 +12,9 @@ export default function Home() {
         //send a request with bearer token
         const token = localStorage.getItem('access');
         if (!token) {
-          console.error('No token found in localStorage');
+          alert('Su sesión ha expirado, por favor inicie sesión nuevamente.');
+          //redirect to login page
+          window.location.href = '/login';
           return;
         }
         //add the token to the headers
@@ -28,7 +31,6 @@ export default function Home() {
         }
         //print the response data
         const data = await response.json();
-        console.log(data);
         //set the vacantes state
         setVacantes(data);
       } catch (error) {
@@ -40,16 +42,9 @@ export default function Home() {
   return (
     <div>
       <h1>Vacantes</h1>
-      <ul>
-        {vacantes.map((vacante) => (
-          <li key={vacante.id}>
-            <h2>{vacante.nombre}</h2>
-            <p>{vacante.puesto}</p>
-            <p>Salario: {vacante.sueldo}</p>
-            <p>Fecha de Publicación: {new Date(vacante.fecha_publicacion).toLocaleDateString()}</p>
-          </li>
-        ))}
-      </ul>
+      {vacantes.map((vacante) => (
+        <VacanteCard key={vacante.id} vacante={vacante} />
+      ))}
     </div>
   );
 }

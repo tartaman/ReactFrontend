@@ -4,6 +4,7 @@ import Home from '../../gestorpersonal/src/pages/Home'
 import Login from '../../gestorpersonal/src/pages/Login'
 import NotFound from '../../gestorpersonal/src/pages/NotFound'
 import Navbar from '../../gestorpersonal/src/components/Navbar'
+import Solicitudes from './pages/Solicitudes';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/Solicitud" element={<Solicitudes />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
