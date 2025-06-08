@@ -1,3 +1,6 @@
+import React from 'react';
+import '../css/VacanteCard.css';
+
 export default function VacanteCard({ vacante }) {
     async function handleApply() {
         try {
