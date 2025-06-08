@@ -2,19 +2,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  background-color: #333;
+  padding: 0.5rem;
+  background-color: #1d0b37;
   color: white;
 }
 
 .navbar-brand {
   font-size: 1.5rem;
   font-weight: bold;
+  margin-left: 1rem;
 }
 
 .navbar-brand img {
-  height: 80px;
+  height: 65px;
   width: auto;
+  border-radius: 100px;
 }
 
 .navbar-links {
@@ -23,8 +25,11 @@
 }
 
 .navbar-links a {
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    font-size: 1.4rem;
+    font-family: ui-monospace;
 }
 
 @media (max-width: 768px) {
