@@ -9,6 +9,7 @@
 .vacante-card h2 {
   color: #0D3B66;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .vacante-card p {
@@ -23,6 +24,8 @@
   border-radius: 4px;
   padding: 10px;
   cursor: pointer;
+  display: block;
+  margin: 10px auto;
 }
 
 .vacante-card button:hover {

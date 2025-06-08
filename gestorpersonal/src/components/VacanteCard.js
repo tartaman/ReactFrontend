@@ -59,7 +59,7 @@ export default function VacanteCard({ vacante }) {
             <div className="vacante-card">
                 <h2>{vacante.nombre}</h2>
                 <p>{vacante.puesto}</p>
-                <p>Salario: {vacante.sueldo}</p>
+                <p>Salario: ${vacante.sueldo} MXN</p>
                 <p>Fecha de Publicación: {new Date(vacante.fecha_publicacion).toLocaleDateString()}</p>
                 <button onClick={handleApply}>Aplicar</button>
             </div>
