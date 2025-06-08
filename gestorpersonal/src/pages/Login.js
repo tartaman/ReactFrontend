@@ -1,3 +1,5 @@
+import React from 'react';
+import '../css/Login.css';
 import { useEffect, useState } from 'react';
 
 export default function Login() {
@@ -39,30 +41,11 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <h1>Login Page</h1>
-      <p>Please enter your credentials to log in.</p>
+    <div className="login-container">
+      <h1>Login</h1>
       <form onSubmit={handleLogin}>
-        <div>
-          <label htmlFor="username">Username:</label>
-          <input
-            type="text"
-            id="username"
-            required
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
+        <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
         <button type="submit">Login</button>
       </form>
     </div>
