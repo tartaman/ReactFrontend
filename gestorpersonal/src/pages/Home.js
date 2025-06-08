@@ -1,7 +1,9 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
+import '../css/Home.css';
 import '../components/VacanteCard'
 import VacanteCard from '../components/VacanteCard';
+
 export default function Home() {
   //use state to manage the vacantes
   const [vacantes, setVacantes] = useState([]);
@@ -39,12 +41,16 @@ export default function Home() {
     }
     fetchVacantes();
   }, [vacantes]);
+
   return (
-    <div>
-      <h1>Vacantes</h1>
-      {vacantes.map((vacante) => (
-        <VacanteCard key={vacante.id} vacante={vacante} />
-      ))}
+    <div className="home-container">
+      <h1>Bienvenido a Villamil Enterprises</h1>
+      <p>Explora nuestras vacantes disponibles</p>
+      <div className="vacantes-grid">
+        {vacantes.map((vacante) => (
+          <VacanteCard key={vacante.id} vacante={vacante} />
+        ))}
+      </div>
     </div>
   );
 }
