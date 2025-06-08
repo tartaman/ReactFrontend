@@ -41,3 +41,10 @@
     margin-top: 1rem;
   }
 } 
+/* hover effect */
+.navbar-links a:hover {
+    color: #0D3B66;
+    background-color: white;
+    border-radius: 15px;
+    transition: 0.3s;
+}
