@@ -1,1 +1,76 @@
- 
+.solicitudes-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #F5F0EB;
+}
+
+.solicitudes-container h1 {
+  color: #0D3B66;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: serif, sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.solicitudes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.solicitud-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.solicitud-card h2 {
+  color: #0D3B66;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  font-family: serif, sans-serif, monospace;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.solicitud-card p {
+  color: #333;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}
+
+.solicitud-card .estado {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  width: 80%;
+  background-color: #0D3B66;
+  color: white;
+  border: none;
+  cursor: default;
+}
+
+.solicitud-card .estado.pendiente {
+  background-color: #FFD700;
+  color: #333;
+}
+
+.solicitud-card .estado.aceptada {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.solicitud-card .estado.rechazada {
+  background-color: #f44336;
+  color: white;
+} 

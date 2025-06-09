@@ -1,8 +1,9 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
-export default function Solicitudes() 
-{
+import React, { useEffect, useState } from 'react';
+import '../css/Solicitudes.css';
+
+export default function Solicitudes() {
     const [solicitudes, setSolicitudes] = useState([]);
+
     useEffect(() => {
         async function fetchSolicitudes() {
             try {
@@ -23,26 +24,30 @@ export default function Solicitudes()
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
+                console.log('Datos de solicitudes:', data);
                 setSolicitudes(data);
             } catch (error) {
                 console.error('Error fetching solicitudes:', error);
             }
         }
         fetchSolicitudes();
-    }, [solicitudes]);
+    }, []);
+
     return (
-        <div>
-            <h1>Solicitudes</h1>
-            {solicitudes.map((solicitud) => (
-                <div key={solicitud.id}>
-                    <h2>{solicitud.nombre_vacante}</h2>
-                    <p>{solicitud.puesto_vacante}</p>
-                    <p>Fecha de Solicitud: {new Date(solicitud.fecha_solicitud).toLocaleDateString()}</p>
-                    <p>Estado: {solicitud.estado}</p>
-                </div>
-            ))}
+        <div className="solicitudes-container">
+            <h1>Mis Solicitudes</h1>
+            <div className="solicitudes-grid">
+                {solicitudes.map((solicitud) => (
+                    <div key={solicitud.id} className="solicitud-card">
+                        <h2>{solicitud.nombre_vacante}</h2>
+                        <p>Puesto: {solicitud.puesto_vacante}</p>
+                        <p>Fecha de solicitud: {new Date(solicitud.fecha_solicitud).toLocaleDateString()}</p>
+                        <div className={`estado ${solicitud.estado.toLowerCase()}`}>
+                            {solicitud.estado}
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
-    
-    
 }
