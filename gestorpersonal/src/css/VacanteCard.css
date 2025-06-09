@@ -17,11 +17,13 @@
   font-family: serif, sans-serif, monospace;
   font-size: 2rem;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 .vacante-card p {
   color: #333;
   margin-bottom: 5px;
+  text-transform: capitalize;
 }
 
 .vacante-card button {
