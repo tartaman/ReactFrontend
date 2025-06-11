@@ -40,7 +40,7 @@ export default function Home() {
       }
     }
     fetchVacantes();
-  }, []);
+  }, [vacantes]);
 
   return (
     <div className="home-container">
