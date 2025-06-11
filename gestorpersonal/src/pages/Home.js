@@ -23,7 +23,7 @@ export default function Home() {
         const headers = new Headers();
         headers.append('Authorization', `Bearer ${token}`);
         headers.append('Content-Type', 'application/json');
-        const response = await fetch('http://localhost:8000/api/vacantes', {
+        const response = await fetch('https://solicitudpersonal.saboria.me/api/vacantes/', {
           method: 'GET',
           headers: headers
         });
