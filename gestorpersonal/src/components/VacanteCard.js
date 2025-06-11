@@ -16,7 +16,7 @@ export default function VacanteCard({ vacante }) {
             headers.append('Content-Type', 'application/json');
 
             // Desactivar la vacante
-            const patchResponse = await fetch(`http://localhost:8000/api/vacantes/${vacante.id}/`, {
+            const patchResponse = await fetch(`https://solicitudpersonal.saboria.me/api/vacantes/${vacante.id}/`, {
                 method: 'PATCH',
                 headers: headers,
                 body: JSON.stringify({
@@ -31,7 +31,7 @@ export default function VacanteCard({ vacante }) {
             }
 
             // Crear la solicitud
-            const postResponse = await fetch(`http://localhost:8000/api/solicitudes/`, {
+            const postResponse = await fetch(`https://solicitudpersonal.saboria.me/api/solicitudes/`, {
                 method: 'POST',
                 headers: headers,
                 body: JSON.stringify({
