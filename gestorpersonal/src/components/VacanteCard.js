@@ -46,6 +46,7 @@ export default function VacanteCard({ vacante }) {
             }
 
             alert('Aplicación exitosa');
+            window.location.reload();
             //destruir el componente
 
         } catch (error) {
