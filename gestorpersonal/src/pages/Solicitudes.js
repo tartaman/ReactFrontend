@@ -16,7 +16,7 @@ export default function Solicitudes() {
                 const headers = new Headers();
                 headers.append('Authorization', `Bearer ${token}`);
                 headers.append('Content-Type', 'application/json');
-                const response = await fetch('https://solicitudpersonal.saboria.me/api/login/', {
+                const response = await fetch('https://solicitudpersonal.saboria.me/api/solicitudes/', {
                     method: 'GET',
                     headers: headers
                 });
