@@ -5,7 +5,7 @@ import Login from '../../gestorpersonal/src/pages/Login'
 import NotFound from '../../gestorpersonal/src/pages/NotFound'
 import Navbar from '../../gestorpersonal/src/components/Navbar'
 import Solicitudes from './pages/Solicitudes';
-
+import Register from './pages/Register';
 function App() {
   return (
     <>
@@ -14,6 +14,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Solicitud" element={<Solicitudes />} />
+        <Route path="/register" element={<Register />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
